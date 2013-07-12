@@ -1,23 +1,18 @@
 "use strict"
 
 function addLazyProperty(object, name, initializer, enumerable) {
-  var initialized = false
-  var cachedValue
   Object.defineProperty(object, name, {
     get: function() {
-      if(initialized) {
-        return cachedValue
-      }
-      cachedValue = initializer()
-      initialized = true
-      return cachedValue
-    },
-    set: function(v) {
-      initialized = true
-      cachedValue = v
+      var v = initializer()
+      Object.defineProperty(this, name, { value: v, enumerable: !!enumerable, writable: true })
       return v
     },
-    enumerable: !!enumerable
+    set: function(v) {
+      Object.defineProperty(this, name, { value: v, enumerable: !!enumerable, writable: true })
+      return v
+    },
+    enumerable: !!enumerable,
+    configurable: true
   })
 }
 
