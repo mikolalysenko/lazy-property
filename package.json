@@ -1,18 +1,17 @@
 {
   "name": "lazy-property",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Lazily initialized properties for objects",
   "main": "lazyProperty.js",
   "directories": {
     "test": "test"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
-    "tape": "~1.0.4"
+    "tape": "^2.12.3"
   },
   "scripts": {
-    "test": "tap test/*.js"
+    "test": "tape test/*.js"
   },
   "repository": {
     "type": "git",
