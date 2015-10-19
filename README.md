@@ -48,6 +48,7 @@ const lazy = require("lazy-property/decorator")
 
 class Example {
   @lazy foo(){ return "computed value of foo" }
+  @lazy("enumerable") bar(){ return "bar shows up in for in loops" }
 }
 ```
 
