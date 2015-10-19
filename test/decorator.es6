@@ -21,3 +21,17 @@ tape("decorator", function(t) {
 
   t.end()
 })
+
+tape("enumerable decorator", function(t) {
+  t.plan(1)
+  class Obj {
+    @lazy("enumerable") foo() {}
+  }
+  var obj = new Obj
+
+  for (var key in obj) {
+    t.same(key, "foo")
+  }
+
+  t.end()
+})
