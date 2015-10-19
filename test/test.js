@@ -9,12 +9,15 @@ tape("lazy-property", function(t) {
     ++count
     return "bar"
   })
-  
+
   t.same(count, 0)
   t.same(obj.foo, "bar")
   t.same(count, 1)
   t.same(obj.foo, "bar")
   t.same(count, 1)
-  
+
   t.end()
 })
+
+require("babel-core/register.js")({stage: 0})
+require("./decorator.es6")
