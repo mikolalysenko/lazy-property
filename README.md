@@ -40,5 +40,17 @@ Adds a lazily initialized property to the object.
 * `init` is a function that computes the value of the property
 * `enumerable` if the property is enumerable (default `false`)
 
+### `@lazy`
+ES7 decorators enable a nicer syntax for defining lazy properties
+
+```js
+const lazy = require("lazy-property/decorator")
+
+class Example {
+  @lazy foo(){ return "computed value of foo" }
+  @lazy("enumerable") bar(){ return "bar shows up in for in loops" }
+}
+```
+
 ## Credits
 (c) 2013 Mikola Lysenko. MIT License

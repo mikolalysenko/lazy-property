@@ -8,6 +8,7 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "babel-core": "^5.8.25",
     "tape": "^2.12.3"
   },
   "scripts": {
